@@ -1,0 +1,13 @@
+
+#获取文件名和路径
+filepath=$(pwd)
+filename=$(ls|grep *.ioc)
+
+#判断是否存在.ioc文件
+if [ ! $filename ];then
+	echo "create a new project..."
+	echo $(cd /home/carson/STM32CubeMX/;./STM32CubeMX)
+else
+	echo "load history file..."
+	echo $(cd /home/carson/STM32CubeMX/;./STM32CubeMX $filepath/$filename)
+fi
